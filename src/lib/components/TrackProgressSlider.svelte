@@ -39,6 +39,8 @@
 			height: 6px;
 			border-radius: 6px;
 
+			overflow: hidden;
+
 			background-color: #d9d9d94d;
 
 			.played-progress {
