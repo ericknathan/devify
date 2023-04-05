@@ -17,7 +17,7 @@
 		<img src={image} alt="" />
 		<div class="info">
 			<h1 title={trackData.name}>{trackData.name}</h1>
-			<span>{trackData.artist['#text']}</span>
+			<span title={trackData.artist['#text']}>{trackData.artist['#text']}</span>
 		</div>
 	</div>
 	<TrackControls trackUrl={trackData.url} />
