@@ -12,8 +12,6 @@
 	$: duration = lastPlayedTrack.duration;
 
 	onMount(() => {
-		lastPlayedTrack = data.props?.lastPlayedTrack;
-
 		const defaultPlayedDuration = new Date(lastPlayedTrack.playedDuration);
 
 		setInterval(() => {
@@ -32,6 +30,10 @@
 		musicProgress.set(defaultPlayedDuration);
 	});
 </script>
+
+<svelte:head>
+    <title>Music Player | {lastPlayedTrack.name}</title>
+</svelte:head>
 
 <div id="app">
 	{#key lastPlayedTrack}
