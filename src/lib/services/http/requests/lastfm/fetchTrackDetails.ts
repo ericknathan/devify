@@ -1,4 +1,4 @@
-import { API_URL } from '$lib/services/constants';
+import { SPOTIFY_API_URL } from '$lib/services/constants';
 
 interface FetchLastPlayedTrackParams {
 	fetch: typeof window.fetch;
@@ -15,7 +15,7 @@ export async function fetchTrackDetails({ fetch, artist, track }: FetchLastPlaye
 		format: 'json'
 	};
 
-	const trackDetailsUrl = new URL(API_URL);
+	const trackDetailsUrl = new URL(SPOTIFY_API_URL);
 	trackDetailsUrl.search = new URLSearchParams(trackDetailsQueryParams).toString();
 
 	const trackDetailsResponse = await fetch(trackDetailsUrl);

@@ -1,11 +1,13 @@
 import type { TrackModel } from '$lib/models';
-import { API_URL, DEFAULT_TRACK } from '$lib/services/constants';
+import { DEFAULT_TRACK, LASTFM_API_URL } from '$lib/services/constants';
 
 interface FetchLastPlayedTrackParams {
 	fetch: typeof window.fetch;
 }
 
-export async function fetchLastPlayedTrack({ fetch }: FetchLastPlayedTrackParams): Promise<TrackModel> {
+export async function fetchLastPlayedTrack({
+	fetch
+}: FetchLastPlayedTrackParams): Promise<TrackModel> {
 	const userPlayingTrackQueryParams = {
 		method: 'user.getrecenttracks',
 		api_key: import.meta.env.VITE_LASTFM_API_KEY,
@@ -14,7 +16,7 @@ export async function fetchLastPlayedTrack({ fetch }: FetchLastPlayedTrackParams
 		limit: '1'
 	};
 
-	const userPlayingTrackUrl = new URL(API_URL);
+	const userPlayingTrackUrl = new URL(LASTFM_API_URL);
 	userPlayingTrackUrl.search = new URLSearchParams(userPlayingTrackQueryParams).toString();
 
 	const userPlayingTrackResponse = await fetch(userPlayingTrackUrl);
@@ -26,5 +28,5 @@ export async function fetchLastPlayedTrack({ fetch }: FetchLastPlayedTrackParams
 		return lastPlayedTrack as TrackModel;
 	}
 
-	return DEFAULT_TRACK;
+	return DEFAULT_TRACK();
 }

@@ -14,25 +14,27 @@
 	onMount(() => {
 		const defaultPlayedDuration = new Date(lastPlayedTrack.playedDuration);
 
-		setInterval(() => {
-			musicProgress.update((store) => {
-				const playedDuration = new Date(store.getTime() + 1000);
+		musicProgress.set({
+			startedAt: new Date(new Date().getTime() - defaultPlayedDuration.getTime()),
+			playedDuration: defaultPlayedDuration
+		});
 
-				if (playedDuration.getTime() >= duration) {
-					invalidateAll();
-					return new Date(-2000);
-				}
+		const interval = setInterval(() => {
+			musicProgress.updateDuration(duration, lastPlayedTrack.playedDuration);
 
-				return playedDuration;
-			});
+			if ($musicProgress.shouldInvalidate) {
+				invalidateAll();
+			}
 		}, 1000);
 
-		musicProgress.set(defaultPlayedDuration);
+		return () => {
+			clearInterval(interval);
+		};
 	});
 </script>
 
 <svelte:head>
-    <title>Music Player | {lastPlayedTrack.name}</title>
+	<title>Music Player | {lastPlayedTrack.name} - {lastPlayedTrack.artist['#text']}</title>
 </svelte:head>
 
 <div id="app">

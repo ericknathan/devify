@@ -12,7 +12,7 @@
 			.padStart(2, '0')}`;
 	}
 
-		$: currentDuration = $musicProgress;
+		$: currentDuration = $musicProgress.playedDuration;
 		$: progress = (currentDuration.getTime() / duration.getTime()) * 100
 </script>
 

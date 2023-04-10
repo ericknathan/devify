@@ -40,8 +40,8 @@
 		padding: 1.5rem;
 		border-radius: 8px;
 
-		background-color: #1d1d1d77;
-		border: 1px solid rgba(59, 59, 59, 0.467);
+		background: linear-gradient(135deg, #1d1d1d77 0%, #30303077 60%, #1d1d1d77 100%);
+		border: 1px solid #3b3b3b77;
 
 		overflow: hidden;
 
