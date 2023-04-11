@@ -1,38 +1,50 @@
-# create-svelte
+<div align="center">
+   <img src=".github/project-logo.svg" height="90">
+</div>
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+# Devify
+[🇺🇸 Do not speak Portuguese? Click here to view the english version.](./README-EN.md)
 
-## Creating a project
+Devify é uma plataforma web que permite que você visualize em tempo real as músicas que está ouvindo no Spotify. Com uma interface intuitiva e amigável, a plataforma apresenta aos usuários informações detalhadas sobre as faixas que estão sendo tocadas, como nome da música, artista e capa do álbum.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Tecnologias utilizadas
+- [Vite](https://vitejs.dev/) para o build e desenvolvimento da aplicação.
+- [Svelte](https://svelte.dev/) para a construção da interface.
+- [SvelteKit](https://kit.svelte.dev/) para gerenciamento de rotas e SSR da aplicação.
+- [TypeScript](https://www.typescriptlang.org/) para a tipagem dos dados.
+- [SASS](https://sass-lang.com/) para a estilização dos componentes.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Demonstração
+A aplicação está disponível para acesso público em: [devify-music.vercel.app](https://devify-music.vercel.app/)
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+![](./.github/project-screenshot.png)
 
-## Developing
+## Execução local
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
+### Como executar a aplicação
+Para executar a aplicação, é necessário ter o [Node.js](https://nodejs.org/en/) instalado em sua máquina. Após isso, basta clonar o repositório, entrar no diretório da aplicação e utilizar os seguintes comandos em seu terminal:
 
 ```bash
-npm run build
+# Instalação de dependências
+$ npm install
+
+# Execução da aplicação
+$ npm run dev
 ```
 
-You can preview the production build with `npm run preview`.
+### Como gerar e executar a build da aplicação localmente
+Para gerar e executar a build da aplicação, basta utilizar o seguinte comando no terminal:
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+```bash
+# Gerar o build da aplicação
+$ npm run build
+
+# Executar o preview do build da aplicação
+$ npm run preview
+```
+
+---
+
+😁 Projeto desenvolvido por [Erick Nathan](https://www.linkedin.com/in/ericknathan/).
+
+[⬆ Voltar ao topo](#devify)<br>
